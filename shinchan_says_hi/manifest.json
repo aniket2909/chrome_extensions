@@ -1,0 +1,10 @@
+{
+    "name": "Shinchan_says_hi",
+    "description": "Shinchan says hi",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "boring_hello_world.html",
+      "default_icon": "shinchan_photo.png"
+    }
+  }
