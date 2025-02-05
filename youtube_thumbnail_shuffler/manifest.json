@@ -1,12 +1,9 @@
 {
-    "name":"Youtube_thumbnail_shuffler",
+    "name":"Youtube Thumbnail Shuffler",
     "description":"Shuffles Youtube Thumbnails",
     "version":"1.0",
     "manifest_version":3,
-    "permissions":[
-        "activeTab",
-        "scripting"
-    ],
+    "permissions":[],
     "content_scripts":[
         {
             "matches":["*://*.youtube.com/*"],

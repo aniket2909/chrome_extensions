@@ -1,0 +1,4 @@
+# Ignore the chrome_extension_store_related_stuff
+# folder in each chrome extention code.
+*/chrome_extension_store_related_stuff
+.DS_Store

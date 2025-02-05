@@ -1,9 +1,10 @@
-const minThumbnailsRequiredToShuffle = 4
+const minThumbnailsRequiredToShuffle = 5
 
 function shuffleThumbnails() {
     /* Function to check for new thumbnails and shuffle there image URLs */
     const thumbnailSelector = [
         "#thumbnail > yt-image > img",
+        "#content > ytm-shorts-lockup-view-model-v2 > ytm-shorts-lockup-view-model > a > div > img",
     ]
 
     const thumbnails = document.querySelectorAll(thumbnailSelector.join(","));
@@ -22,7 +23,7 @@ function shuffleThumbnails() {
         console.log("Not enough thumbnails to shuffle yet, required:"+minThumbnailsRequiredToShuffle+
             " available:"+processThumbnails.length
         )
-        return
+        return;
     }
 
     const allURLs = Array.from([...processThumbnails], img => img.src)
@@ -31,7 +32,10 @@ function shuffleThumbnails() {
     function shuffle(array) {
         /* Function to shuffle arrays */
         for(let i = array.length-1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i+1));
+            let j;
+            do {
+                j = Math.floor(Math.random() * i);
+            } while(j == i);
             [array[i],array[j]] = [array[j],array[i]];
         }
         return array;
